@@ -18,44 +18,209 @@
     </script>
 
     <title> Abhiroop Ajith </title>
-    <!-- <link rel="icon" type="image/x-icon" href="assets/images/stanford.ico"> -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
     <style>
         :root {
             --primary-color: rgb(172, 43, 55);
             --dark-primary: rgb(172, 43, 55);
+            --light-gray: #f8f9fa;
+            --shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            line-height: 1.6;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            min-height: 100vh;
+        }
+        
         h1 {
             color: var(--primary-color) !important;
+            font-weight: 600;
+            margin-bottom: 30px;
+            position: relative;
         }
+        
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+        
         a {
             color: var(--primary-color) !important;
+            transition: all 0.3s ease;
         }
+        
+        a:hover {
+            transform: translateY(-1px);
+            text-shadow: 0 2px 4px rgba(172, 43, 55, 0.3);
+        }
+        
         #profile-name {
             color: var(--primary-color) !important;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
         }
+        
         #profile-email {
             color: var(--primary-color) !important;
+            font-weight: 500;
+            margin-bottom: 20px;
         }
+        
         .research-proj-title {
             color: var(--primary-color) !important;
+            transition: all 0.3s ease;
         }
+        
+        #header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(172, 43, 55, 0.1);
+            margin-bottom: 0;
+        }
+        
+        #header a {
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
         #header a:hover {
+            background: rgba(172, 43, 55, 0.1);
             color: var(--primary-color) !important;
+            transform: translateY(-2px);
+        }
+        
+        .research-item {
+            display: flex;
+            margin-bottom: 40px;
+            padding: 25px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        
+        .research-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border-left-color: var(--primary-color);
+        }
+        
+        .research-thumb {
+            margin-right: 25px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+        
+        .research-thumb:hover {
+            transform: scale(1.02);
+        }
+        
+        .research-content {
+            flex: 1;
+        }
+        
+        .profile-links a {
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            margin: 0 5px;
+        }
+        
+        .profile-links a:hover {
+            background: rgba(172, 43, 55, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .section {
+            padding: 40px 30px;
+            margin-bottom: 20px;
+        }
+        
+        .news-item {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s ease;
+        }
+        
+        .news-item:hover {
+            background: rgba(172, 43, 55, 0.02);
+            padding-left: 10px;
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(172, 43, 55, 0.3), transparent);
+            margin: 40px 0;
+        }
+        
+        @media (max-width: 768px) {
+            #profile {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            #profile-pic {
+                margin-right: 0 !important;
+                margin-bottom: 20px;
+            }
+            
+            .research-item {
+                flex-direction: column;
+            }
+            
+            .research-thumb {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+        
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: var(--primary-color);
+            z-index: 1000;
+            transition: width 0.3s ease;
         }
     </style>
 </head>
 
 <body>
-    <div style="width:1000px;margin: 0px auto;">
+    <div class="scroll-indicator" id="scrollIndicator"></div>
+    <div style="width:1000px;margin: 0px auto; max-width: 95%;">
         <header id="header" width="400px" style="display:flex;justify-content: space-around;">
             <a href="#profile-intro">Home</a>
             <a href="#updates">News</a>
             <a href="#research">Research</a>
             <a href="#service">Service</a>
         </header>
-        <div id="profile" style="display: flex; padding: 90px 30px 10px 30px; border-bottom: 1px solid #ddd;">
+        <div id="profile" style="display: flex; padding: 60px 30px 40px 30px; border-bottom: 1px solid #ddd;">
             <div id="profile-pic" style="margin-right: 40px;">
-                <img src="figs/me.jpg" style="width: 400px; margin-bottom: 18px;" />
+                <img src="figs/me.jpg" style="width: 400px; margin-bottom: 18px; border-radius: 15px; box-shadow: var(--shadow);" />
             </div>
             <div id="profile-intro" style="flex: 1;">
                 <div id="profile-name">Abhiroop Ajith</div>
@@ -74,128 +239,157 @@
                     of aircrafts (in collaboration with Boeing, CMU and Gelsight) and textile manipulation (in collaboration with Levi's and 
                     Bluewater Defense).
                 </p>
-                <div class="profile-links" style="text-align: center;">
-                    <a href="cv/Abhiroop_Resume_Feb18.pdf">CV</a>
-                    /
-                    <a href="https://scholar.google.com/citations?user=LiDMFt4AAAAJ&hl=en">Google Scholar</a>
-                    /
-                    <a href="https://github.com/AbhiroopAjith">Github</a>
-                    <br>
+                <div class="profile-links" style="text-align: center; margin-top: 25px;">
+                    <a href="cv/Abhiroop_Resume_Feb18.pdf">📄 CV</a>
+                    <a href="https://scholar.google.com/citations?user=LiDMFt4AAAAJ&hl=en">🎓 Google Scholar</a>
+                    <a href="https://github.com/AbhiroopAjith">💻 Github</a>
+                    <br><br>
                     <span style="font-size: 0.8em; color: #666;">CV last updated: Feb 18, 2024</span>
                 </div>
             </div>
         </div>
         <div class="section" id="updates" style="margin: 0 auto; max-width: 900px;">
             <h1>News</h1>
-            <ul>
-                <li> <b>January 2025</b> Our Paper "Multi-layer Motion Planning with Kinodynamic and
-                    Spatio-Temporal Constraints has been accepted at HSCC 2025."
-                <!-- <li> <b>Feb 2025</b> Passed the PhD qualification exam. 🎉 -->
-                <li> <b>August 2024</b> Started PhD at Worcester Polytechnic Institute.</li>
-            </ul>
-            <p></p>
+            <div class="news-item">
+                <b>January 2025</b> Our Paper "Multi-layer Motion Planning with Kinodynamic and
+                Spatio-Temporal Constraints" has been accepted at HSCC 2025. 🎉
+            </div>
+            <div class="news-item">
+                <b>August 2024</b> Started PhD at Worcester Polytechnic Institute. 🚀
+            </div>
             <div style="clear: both;"></div>
         </div>
         <div class="divider"></div>
-        <div style="display:flex;flex-direction: column; margin: 0 auto; max-width: 900px;" id="research">
+        <div style="display:flex;flex-direction: column; margin: 0 auto; max-width: 900px; padding: 0 30px;" id="research">
             <h1>Research</h1>
-            <div>
-                <a href="" style="height: 12em;" class="research-thumb">
+            <div class="research-item">
+                <a href="" style="height: 12em; min-width: 200px;" class="research-thumb">
                     <video id="teaser" autoplay muted loop width="100%" style="object-fit: cover; height: 100%; display: block;">
-                        <source src="figs/sst_stl.mp4"
-                                type="video/mp4">
+                        <source src="figs/sst_stl.mp4" type="video/mp4">
                     </video>
                 </a>
-                <a href="" class="research-proj-title">
-                    Multi-layer Motion Planning with Kinodynamic and
-                    Spatio-Temporal Constraints
-                </a>
-                <p>
-                    <a href="https://arxiv.org/abs/2503.07762">arXiv</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                    <a href="https://dl.acm.org/doi/10.1145/3716863.3718041">Paper</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                    <a href="https://github.com/elpis-lab/LG-SST-STL">Code</a>
-                </p>
-                <p>
-                    <i>ACM Hybrid Systems: Computation and Control (HSCC) 2025</i>
-                </p>
-                <p>
-                    Jeel Chatrola*,
-                    <b style="text-decoration: underline;">Abhiroop Ajith*</b>,
-                    Kevin Leahy,
-                    Constantinos Chamzas
-                    <br>
-                    <span style="font-size: 0.9em; color: #666;">* Equal contribution</span>
-                </p>
+                <div class="research-content">
+                    <a href="" class="research-proj-title" style="font-size: 1.2rem; font-weight: 600;">
+                        Multi-layer Motion Planning with Kinodynamic and Spatio-Temporal Constraints
+                    </a>
+                    <p style="margin: 10px 0;">
+                        <a href="https://arxiv.org/abs/2503.07762">📄 arXiv</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                        <a href="https://dl.acm.org/doi/10.1145/3716863.3718041">📖 Paper</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                        <a href="https://github.com/elpis-lab/LG-SST-STL">💻 Code</a>
+                    </p>
+                    <p style="margin: 10px 0;">
+                        <i>ACM Hybrid Systems: Computation and Control (HSCC) 2025</i>
+                    </p>
+                    <p style="margin: 10px 0; line-height: 1.5;">
+                        Jeel Chatrola*,
+                        <b style="text-decoration: underline;">Abhiroop Ajith*</b>,
+                        Kevin Leahy,
+                        Constantinos Chamzas
+                        <br>
+                        <span style="font-size: 0.9em; color: #666;">* Equal contribution</span>
+                    </p>
+                </div>
             </div>
-            <div>
-                <a href="" style="height: 12em;" class="research-thumb">
+            <div class="research-item">
+                <a href="" style="height: 12em; min-width: 200px;" class="research-thumb">
                     <video id="teaser" autoplay muted loop width="100%" style="object-fit: cover; height: 100%; display: block;">
-                        <source src="figs/sewing.mp4"
-                                type="video/mp4">
+                        <source src="figs/sewing.mp4" type="video/mp4">
                     </video>
                 </a>
-                <a href="" class="research-proj-title">
-                    Robotic Automation in Apparel Manufacturing: A Novel Approach to Fabric Handling and Sewing
-                </a>
-                <p>
-                    <a href="https://arxiv.org/abs/2503.00249">Paper</a>
-                </p>
-                <p>
-                    <b style="text-decoration: underline;">Abhiroop Ajith</b>*,
-                    Gokul Narayanan*,
-                    Jonathan Zornow,
-                    Carlos Calle,
-                    Auralis Herrero Lugo,
-                    Jose Luis Susa Rincon,
-                    Chengtao Wen,
-                    Eugen Solowjow
-                    <br>
-                    <span style="font-size: 0.9em; color: #666;">* Equal contribution</span>
-                </p>
+                <div class="research-content">
+                    <a href="" class="research-proj-title" style="font-size: 1.2rem; font-weight: 600;">
+                        Robotic Automation in Apparel Manufacturing: A Novel Approach to Fabric Handling and Sewing
+                    </a>
+                    <p style="margin: 10px 0;">
+                        <a href="https://arxiv.org/abs/2503.00249">📄 Paper</a>
+                    </p>
+                    <p style="margin: 10px 0; line-height: 1.5;">
+                        <b style="text-decoration: underline;">Abhiroop Ajith</b>*,
+                        Gokul Narayanan*,
+                        Jonathan Zornow,
+                        Carlos Calle,
+                        Auralis Herrero Lugo,
+                        Jose Luis Susa Rincon,
+                        Chengtao Wen,
+                        Eugen Solowjow
+                        <br>
+                        <span style="font-size: 0.9em; color: #666;">* Equal contribution</span>
+                    </p>
+                </div>
             </div>
-            <div>
-                <a href="" style="height: 12em;" class="research-thumb">
+            <div class="research-item">
+                <a href="" style="height: 12em; min-width: 200px;" class="research-thumb">
                     <video id="teaser" autoplay muted loop width="100%" style="object-fit: cover; height: 100%; display: block;">
-                        <source src="figs/tactile.mp4"
-                                type="video/mp4">
+                        <source src="figs/tactile.mp4" type="video/mp4">
                     </video>
                 </a>
-                <a href="" class="research-proj-title">
-                    Robotic defect inspection with visual and tactile perception for large-scale components
-                </a>
-                <p>
-                    <a href="https://arxiv.org/pdf/2309.04590">Paper</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                    <a href="https://zenodo.org/records/8327713">Dataset</a>
-                </p>
-                <p>
-                    <i>2023 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</i>
-                </p>
-                <p>
-                    Arpit Agarwal,
-                    <b style="text-decoration: underline;">Abhiroop Ajith</b>,
-                    Chengtao Wen,
-                    Veniamin Stryzheus,
-                    Brian Miller,
-                    Matthew Chen,
-                    Micah K Johnson,
-                    Jose Luis Susa Rincon,
-                    Justinian Rosca,
-                    Wenzhen Yuan
-                </p>
+                <div class="research-content">
+                    <a href="" class="research-proj-title" style="font-size: 1.2rem; font-weight: 600;">
+                        Robotic defect inspection with visual and tactile perception for large-scale components
+                    </a>
+                    <p style="margin: 10px 0;">
+                        <a href="https://arxiv.org/pdf/2309.04590">📄 Paper</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                        <a href="https://zenodo.org/records/8327713">📊 Dataset</a>
+                    </p>
+                    <p style="margin: 10px 0;">
+                        <i>2023 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</i>
+                    </p>
+                    <p style="margin: 10px 0; line-height: 1.5;">
+                        Arpit Agarwal,
+                        <b style="text-decoration: underline;">Abhiroop Ajith</b>,
+                        Chengtao Wen,
+                        Veniamin Stryzheus,
+                        Brian Miller,
+                        Matthew Chen,
+                        Micah K Johnson,
+                        Jose Luis Susa Rincon,
+                        Justinian Rosca,
+                        Wenzhen Yuan
+                    </p>
+                </div>
             </div>
-
             <div style="clear: both;"></div>
         </div>
         <div class="divider"></div>
         <div class="section" id="service" style="margin: 0 auto; max-width: 900px;">
             <h1>Service</h1>
-            <ul>
-                <li> Teaching assistant of RBE 577 Machine Learning for Robotics</li>
-            </ul><br>
-            <p></p>
+            <ul style="list-style: none; padding: 0;">
+                <li style="padding: 10px 0; border-left: 3px solid var(--primary-color); padding-left: 15px; margin: 10px 0;">
+                    🎓 Teaching assistant of RBE 577 Machine Learning for Robotics
+                </li>
+            </ul>
             <div style="clear: both;"></div>
         </div>
+        
+        <!-- Footer -->
+        <footer style="text-align: center; padding: 40px 0; border-top: 1px solid #eee; margin-top: 60px; color: #666;">
+        </footer>
     </div>
+
+    <script>
+        // Scroll indicator
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollPercent = (scrollTop / scrollHeight) * 100;
+            document.getElementById('scrollIndicator').style.width = scrollPercent + '%';
+        });
+        
+        // Smooth scroll for navigation links
+        document.querySelectorAll('#header a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 
 </body>
 
