@@ -32,9 +32,15 @@
         }
         
         body {
-            line-height: 1.6;
+            line-height: 1.7;
             background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
             min-height: 100vh;
+        }
+
+        /* Readability improvements */
+        body, p {
+            color: #2b2b2b !important;
+            font-weight: 400;
         }
         
         h1 {
@@ -158,14 +164,30 @@
         }
         
         .news-item {
-            padding: 15px 0;
-            border-bottom: 1px solid #eee;
+            padding: 14px 16px;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            background: #fff;
             transition: all 0.3s ease;
         }
         
         .news-item:hover {
-            background: rgba(172, 43, 55, 0.02);
-            padding-left: 10px;
+            background: rgba(172, 43, 55, 0.03);
+            box-shadow: var(--shadow);
+            transform: translateY(-2px);
+        }
+        
+        .news-date {
+            display: inline-block;
+            color: var(--primary-color);
+            font-weight: 700;
+            background: rgba(172, 43, 55, 0.06);
+            border: 1px solid rgba(172, 43, 55, 0.2);
+            border-radius: 6px;
+            padding: 2px 8px;
+            margin-right: 10px;
+            white-space: nowrap;
         }
         
         .divider {
@@ -206,6 +228,27 @@
             z-index: 1000;
             transition: width 0.3s ease;
         }
+        
+        /* Author name styling */
+        .author-name {
+            color: #34495e !important;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        
+        /* Metadata label color (patents, collaborators) */
+        #patents strong,
+        .research-content strong {
+            color: var(--primary-color) !important;
+            font-weight: 600;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                transition: none !important;
+                animation: none !important;
+            }
+        }
     </style>
 </head>
 
@@ -216,6 +259,7 @@
             <a href="#profile-intro">Home</a>
             <a href="#updates">News</a>
             <a href="#research">Research</a>
+            <a href="#patents">Patents</a>
             <a href="#service">Service</a>
         </header>
         <div id="profile" style="display: flex; padding: 60px 30px 40px 30px; border-bottom: 1px solid #ddd;">
@@ -251,17 +295,21 @@
         <div class="section" id="updates" style="margin: 0 auto; max-width: 900px;">
             <h1>News</h1>
             <div class="news-item">
-                <b>May 2025</b> Our Paper "Robotic Automation in Apparel Manufacturing: A Novel Approach to Fabric Handling and Sewing" has been accepted at CASE 2025. 
+                <span class="news-date">April 2025</span>
+                I have received the SIGBED student travel award for $2000. 
             </div>
             <div class="news-item">
-                <b>April 2025</b> I have received the SIGBED student travel award for $2000. 
+                <span class="news-date">March 2025</span>
+                Our Paper "Robotic Automation in Apparel Manufacturing: A Novel Approach to Fabric Handling and Sewing" has been accepted at CASE 2025.
             </div>
             <div class="news-item">
-                <b>January 2025</b> Our Paper "Multi-layer Motion Planning with Kinodynamic and
+                <span class="news-date">January 2025</span>
+                Our Paper "Multi-layer Motion Planning with Kinodynamic and
                 Spatio-Temporal Constraints" has been accepted at HSCC 2025.
             </div>
             <div class="news-item">
-                <b>August 2024</b> Started PhD at Worcester Polytechnic Institute. 
+                <span class="news-date">August 2024</span>
+                Started PhD at Worcester Polytechnic Institute. 
             </div>
             <div style="clear: both;"></div>
         </div>
@@ -288,7 +336,7 @@
                     </p>
                     <p style="margin: 10px 0; line-height: 1.5;">
                         Jeel Chatrola*,
-                        <b style="text-decoration: underline;">Abhiroop Ajith*</b>,
+                        <span class="author-name">Abhiroop Ajith*</span>,
                         Kevin Leahy,
                         Constantinos Chamzas
                         <br>
@@ -313,7 +361,7 @@
                         <i>2025 IEEE International Conference on Automation Science and Engineering (CASE)</i>
                     </p>
                     <p style="margin: 10px 0; line-height: 1.5;">
-                        <b style="text-decoration: underline;">Abhiroop Ajith</b>*,
+                        <span class="author-name">Abhiroop Ajith</span>*,
                         Gokul Narayanan*,
                         Jonathan Zornow,
                         Carlos Calle,
@@ -323,6 +371,8 @@
                         Eugen Solowjow
                         <br>
                         <span style="font-size: 0.9em; color: #666;">* Equal contribution</span>
+                        <br>
+                        <span style="font-size: 0.9em; color: #666;"><strong>Collaborators:</strong> Levi's, BlueWater Defense, Sewbo</span>
                     </p>
                 </div>
             </div>
@@ -346,7 +396,7 @@
                     </p>
                     <p style="margin: 10px 0; line-height: 1.5;">
                         Arpit Agarwal,
-                        <b style="text-decoration: underline;">Abhiroop Ajith</b>,
+                        <span class="author-name">Abhiroop Ajith</span>,
                         Chengtao Wen,
                         Veniamin Stryzheus,
                         Brian Miller,
@@ -355,10 +405,41 @@
                         Jose Luis Susa Rincon,
                         Justinian Rosca,
                         Wenzhen Yuan
+                        <br>
+                        <span style="font-size: 0.9em; color: #666;"><strong>Collaborators:</strong> Carnegie Mellon University (CMU), Boeing, Gelsight</span>
                     </p>
                 </div>
             </div>
             <div style="clear: both;"></div>
+        </div>
+        <div class="divider"></div>
+        <div class="section" id="patents" style="margin: 0 auto; max-width: 900px; padding: 40px 30px;">
+            <h1>Patents</h1>
+            <div style="display: flex; background: white; padding: 25px; border-radius: 15px; box-shadow: var(--shadow); border-left: 4px solid var(--primary-color);">
+                <div style="margin-right: 25px; min-width: 300px;">
+                    <img src="figs/patent_viz.png" style="width: 300px; height: auto; border-radius: 10px; box-shadow: var(--shadow); border: 1px solid #ddd; background: white; padding: 10px;" alt="Patent diagram showing robotic visual tactile surface inspection system">
+                </div>
+                <div style="flex: 1;">
+                    <h3 style="color: var(--primary-color); margin-bottom: 15px; font-size: 1.1rem; font-weight: 600;">
+                        Robotic visual tactile surface inspection system
+                    </h3>
+                <p style="margin: 10px 0; color: #666; font-size: 0.95rem;">
+                    <strong>Patent No:</strong> WO2024181994A1 &nbsp;&bull;&nbsp; 
+                    <strong>Published:</strong> September 6, 2024 &nbsp;&bull;&nbsp; 
+                    <strong>Filed:</strong> August 29, 2023
+                </p>
+                <p style="margin: 10px 0; color: #666; font-size: 0.95rem;">
+                    <strong>Assignee:</strong> Siemens Corporation &nbsp;&bull;&nbsp; 
+                    <strong>Authority:</strong> WIPO (PCT)
+                </p>
+                <p style="margin: 15px 0; line-height: 1.5;">
+                    <strong>Inventors:</strong> Chengtao Wen, Justinian Rosca, Eugen Solowjow, Gokul Narayanan Sathya Narayanan, Jose Luis Susa Rincon, <span class="author-name">Abhiroop Ajith</span>
+                </p>
+                    <p style="margin: 15px 0;">
+                        <a href="https://patents.google.com/patent/WO2024181994A1" target="_blank">📄 View Patent</a>
+                    </p>
+                </div>
+            </div>
         </div>
         <div class="divider"></div>
         <div class="section" id="service" style="margin: 0 auto; max-width: 900px;">
