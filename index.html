@@ -322,7 +322,7 @@
             <h1>Research</h1>
             <div class="research-item">
                 <a href="" style="height: 12em; min-width: 200px;" class="research-thumb">
-                    <video id="teaser" autoplay muted loop width="100%" style="object-fit: cover; height: 100%; display: block;">
+                    <video id="graph-coloring-video" autoplay muted loop width="100%" style="object-fit: cover; height: 100%; display: block; transform: scale(1.2);">
                         <source src="figs/graph_coloring.mp4" type="video/mp4">
                     </video>
                 </a>
@@ -505,6 +505,21 @@
                     });
                 }
             });
+        });
+        
+        // Handle video start time for graph coloring video
+        document.addEventListener('DOMContentLoaded', function() {
+            const graphVideo = document.getElementById('graph-coloring-video');
+            if (graphVideo) {
+                graphVideo.addEventListener('loadedmetadata', function() {
+                    this.currentTime = 2; // Start at 2 seconds
+                });
+                
+                graphVideo.addEventListener('ended', function() {
+                    this.currentTime = 2; // Loop back to 2 seconds when ended
+                    this.play();
+                });
+            }
         });
     </script>
 
