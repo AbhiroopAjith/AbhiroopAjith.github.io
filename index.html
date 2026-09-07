@@ -1,11 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap"
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Abhiroop Ajith</title>
+
+    <meta name="description"
+        content="Abhiroop Ajith — PhD student in Robotics Engineering at WPI and Research Intern at Siemens. Learning world models and symbolic abstractions for long-horizon robot manipulation." />
+    <meta property="og:title" content="Abhiroop Ajith" />
+    <meta property="og:description"
+        content="PhD student in Robotics Engineering at WPI and Research Intern at Siemens. Learning world models and symbolic abstractions for long-horizon robot manipulation." />
+    <meta property="og:image" content="https://abhiroopajith.github.io/figs/me.jpg" />
+    <meta property="og:url" content="https://abhiroopajith.github.io/" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+
+    <link rel="icon" type="image/x-icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DPH2YST3Z6"></script>
@@ -13,28 +30,21 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-DPH2YST3Z6');
     </script>
 
-    <title> Abhiroop Ajith </title>
-    <link rel="icon" type="image/x-icon"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
     <style>
         :root {
-            --primary-color: #9B2335;
-            --dark-primary: #7A1C2A;
-            --light-primary: rgba(155, 35, 53, 0.08);
-            --accent: #C8A961;
-            --text-primary: #1a1a2e;
-            --text-secondary: #4a4a5a;
-            --text-muted: #8a8a9a;
-            --light-gray: #f8f9fa;
-            --border-light: rgba(0, 0, 0, 0.06);
-            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
-            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.12);
-            --radius: 12px;
+            --accent: #AC2B37;
+            --accent-dark: #8A222C;
+            --text: #222222;
+            --text-secondary: #444444;
+            --text-muted: #767676;
+            --rule: #e5e5e5;
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         html {
@@ -42,718 +52,585 @@
         }
 
         body {
-            line-height: 1.8;
-            background: #fefefe;
-            min-height: 100vh;
-            font-family: 'Inter', 'Source Sans Pro', -apple-system, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #ffffff;
+            color: var(--text);
+            font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            font-size: 17px;
+            line-height: 1.65;
         }
 
-        body,
-        p {
-            color: var(--text-primary) !important;
-            font-weight: 400;
-            font-size: 0.98rem;
-        }
-
-        h1 {
-            color: var(--primary-color) !important;
-            font-weight: 700;
-            font-size: 1.6rem;
-            letter-spacing: -0.02em;
-            margin-bottom: 30px;
-            position: relative;
-            display: inline-block;
-        }
-
-        h1::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 40px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary-color), var(--accent));
-            border-radius: 2px;
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 0 24px 60px;
         }
 
         a {
-            color: var(--primary-color) !important;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            font-weight: 500;
+            color: var(--accent);
+            text-decoration: none;
         }
 
         a:hover {
-            color: var(--dark-primary) !important;
+            color: var(--accent-dark);
+            text-decoration: underline;
         }
 
-        #profile-name {
-            color: var(--primary-color) !important;
-            font-size: 2.4rem;
-            font-weight: 600;
-            letter-spacing: -0.03em;
-            margin-top: 0;
-            margin-bottom: 4px;
-            line-height: 1.2;
-        }
-
-        #profile-email {
-            color: var(--primary-color) !important;
-            font-weight: 500;
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-        }
-
-        #profile-intro p:first-of-type {
-            margin-top: 0;
-        }
-
-        #profile-intro p {
-            color: var(--text-secondary) !important;
-            line-height: 1.8;
-        }
-
-        .research-proj-title {
-            color: var(--primary-color) !important;
-            transition: all 0.3s ease;
-        }
-
-        #header {
-            position: sticky;
-            top: 0;
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            z-index: 100;
-            padding: 12px 0;
-            border-bottom: 1px solid var(--border-light);
-            margin-bottom: 0;
-        }
-
-        #header a {
-            padding: 10px 20px;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-
-        #header a:hover {
-            background: rgba(155, 35, 53, 0.1);
-            color: var(--primary-color) !important;
-        }
-
-        .research-item {
+        nav {
             display: flex;
-            margin-bottom: 30px;
-            padding: 28px;
-            background: white;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-sm);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid var(--border-light);
-            border-left: 4px solid transparent;
-        }
-
-        .research-item:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-            border-left-color: var(--primary-color);
-        }
-
-        .research-thumb {
-            margin-right: 25px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-        }
-
-        .research-thumb:hover {
-            transform: scale(1.02);
-        }
-
-        .research-content {
-            flex: 1;
-        }
-
-        .profile-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
             justify-content: center;
+            flex-wrap: wrap;
+            gap: 6px 28px;
+            padding: 18px 0;
+            border-bottom: 1px solid var(--rule);
+            font-size: 0.95rem;
+            font-weight: 600;
         }
 
-        .profile-links a {
-            padding: 8px 18px;
+        nav a {
+            color: var(--text-secondary);
+        }
+
+        nav a:hover {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* ---------- About ---------- */
+        #about {
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+            padding: 48px 0 8px;
+        }
+
+        #about-text {
+            flex: 1;
+            min-width: 0;
+        }
+
+        #about h1 {
+            font-size: 2.1rem;
+            font-weight: 700;
+            margin: 0 0 2px;
+            letter-spacing: -0.01em;
+        }
+
+        #tagline {
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+
+        #contact-links {
+            margin-bottom: 22px;
+            font-size: 0.95rem;
+        }
+
+        #contact-links .sep {
+            color: #cccccc;
+            margin: 0 8px;
+        }
+
+        #about p {
+            margin: 0 0 16px;
+            color: var(--text-secondary);
+        }
+
+        #portrait {
+            flex-shrink: 0;
+            width: 226px;
+        }
+
+        #portrait img {
+            width: 100%;
+            display: block;
             border-radius: 8px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            background: var(--light-primary);
-            font-size: 0.9rem;
-            border: 1px solid rgba(155, 35, 53, 0.12);
         }
 
-        .profile-links a:hover {
-            background: var(--primary-color);
-            color: white !important;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(155, 35, 53, 0.3);
+        /* ---------- Sections ---------- */
+        section {
+            padding-top: 8px;
         }
 
-        .section {
-            padding: 50px 30px;
-            margin-bottom: 20px;
+        h2 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin: 36px 0 18px;
+            padding-top: 28px;
+            border-top: 1px solid var(--rule);
         }
 
-        .news-item {
-            padding: 16px 20px;
-            border: 1px solid var(--border-light);
-            border-radius: var(--radius);
-            margin-bottom: 12px;
-            background: white;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .news-item:hover {
-            background: rgba(155, 35, 53, 0.03);
-            box-shadow: var(--shadow);
-            transform: translateY(-2px);
+        /* ---------- News ---------- */
+        .news-row {
+            display: flex;
+            gap: 18px;
+            margin-bottom: 10px;
         }
 
         .news-date {
-            display: inline-block;
-            color: var(--primary-color);
+            flex-shrink: 0;
+            width: 84px;
+            color: var(--accent);
             font-weight: 600;
-            background: var(--light-primary);
-            border: 1px solid rgba(155, 35, 53, 0.12);
+            font-size: 0.92rem;
+            line-height: 1.65;
+            padding-top: 1px;
+        }
+
+        .news-text {
+            color: var(--text-secondary);
+        }
+
+        /* ---------- Publications ---------- */
+        .pub {
+            display: flex;
+            gap: 28px;
+            margin-bottom: 34px;
+        }
+
+        .pub-thumb {
+            flex-shrink: 0;
+            width: 220px;
+        }
+
+        .pub-thumb img,
+        .pub-thumb video {
+            width: 100%;
+            height: 148px;
+            object-fit: cover;
+            display: block;
             border-radius: 6px;
-            padding: 2px 10px;
-            margin-right: 12px;
-            white-space: nowrap;
-            font-size: 0.85rem;
+            border: 1px solid var(--rule);
         }
 
-        .divider {
-            height: 1px;
-            background: linear-gradient(to right, transparent, var(--border-light), transparent);
-            margin: 20px 0;
+        .pub-thumb .contain {
+            object-fit: contain;
+            background: #ffffff;
         }
 
-        @media (max-width: 768px) {
-            #profile>div {
-                flex-direction: column;
-                text-align: center;
-                gap: 25px;
-            }
-
-            #profile-pic {
-                margin: 0 auto !important;
-            }
-
-            #profile-pic img {
-                width: 180px !important;
-                height: 230px !important;
-            }
-
-            #profile-name {
-                font-size: 2rem !important;
-            }
-
-            .profile-links {
-                justify-content: center;
-            }
-
-            .research-item {
-                flex-direction: column;
-            }
-
-            .research-thumb {
-                margin-right: 0;
-                margin-bottom: 20px;
-            }
+        .pub-body {
+            flex: 1;
+            min-width: 0;
         }
 
-        /* Scroll indicator */
-        .scroll-indicator {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 2px;
-            background: linear-gradient(90deg, var(--primary-color), var(--accent));
-            z-index: 1000;
-            transition: width 0.1s linear;
+        .pub-title {
+            font-weight: 700;
+            font-size: 1.02rem;
+            line-height: 1.4;
+            display: inline-block;
+            margin-bottom: 4px;
         }
 
-        /* Author name styling */
-        .author-name {
-            color: var(--text-primary) !important;
-            font-weight: 600;
-            text-decoration: underline;
-            text-decoration-color: var(--primary-color);
-            text-underline-offset: 2px;
-        }
-
-        /* Metadata label color (patents, collaborators) */
-        #patents strong,
-        .research-content strong {
-            color: var(--primary-color) !important;
-            font-weight: 600;
-        }
-
-        .service-item {
-            padding: 18px 24px;
-            background: white;
-            border: 1px solid var(--border-light);
-            border-radius: var(--radius);
-            margin-bottom: 12px;
-            border-left: 4px solid var(--primary-color);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        .pub-authors {
+            color: var(--text-secondary);
             font-size: 0.95rem;
+            margin: 2px 0;
         }
 
-        .service-item:hover {
-            box-shadow: var(--shadow);
-            transform: translateX(4px);
+        .pub-authors .me {
+            font-weight: 600;
+            color: var(--text);
         }
 
-
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-                        transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        .pub-venue {
+            font-style: italic;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin: 2px 0;
         }
 
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .pub-tldr {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin: 6px 0 4px;
         }
 
-        .site-footer {
+        .pub-links {
+            font-size: 0.92rem;
+            margin-top: 4px;
+        }
+
+        .pub-links .sep {
+            color: #cccccc;
+            margin: 0 7px;
+        }
+
+        .pub-note {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+        }
+
+        /* ---------- Patents ---------- */
+        .patent {
+            margin-bottom: 26px;
+        }
+
+        .patent-title {
+            font-weight: 700;
+            font-size: 1.02rem;
+            margin-bottom: 2px;
+        }
+
+        .patent-meta {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            margin: 2px 0;
+        }
+
+        .patent-inventors {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin: 2px 0;
+        }
+
+        .patent-inventors .me {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        /* ---------- Service ---------- */
+        #service ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #service li {
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+        }
+
+        /* ---------- Footer ---------- */
+        footer {
+            margin-top: 56px;
+            padding-top: 24px;
+            border-top: 1px solid var(--rule);
             text-align: center;
-            padding: 40px 0 30px;
-            border-top: 1px solid var(--border-light);
-            margin-top: 40px;
+            color: var(--text-muted);
+            font-size: 0.88rem;
         }
 
-        .site-footer p {
-            color: var(--text-muted) !important;
-            margin: 4px 0;
-        }
-
-        @media (max-width: 768px) {
-            #profile-pic {
-                width: 220px !important;
-                margin-left: auto !important;
-                margin-right: auto !important;
+        /* ---------- Mobile ---------- */
+        @media (max-width: 700px) {
+            body {
+                font-size: 16px;
             }
 
-            h1 {
-                font-size: 1.4rem;
+            #about {
+                flex-direction: column-reverse;
+                align-items: center;
+                text-align: left;
+                gap: 28px;
+                padding-top: 32px;
             }
 
-            #profile-name {
-                font-size: 1.8rem;
+            #portrait {
+                width: 200px;
+            }
+
+            #about h1,
+            #tagline,
+            #contact-links {
+                text-align: center;
+            }
+
+            .pub {
+                flex-direction: column;
+                gap: 14px;
+            }
+
+            .pub-thumb {
+                width: 100%;
+            }
+
+            .pub-thumb img,
+            .pub-thumb video {
+                height: auto;
+                max-height: 260px;
+            }
+
+            .news-row {
+                flex-direction: column;
+                gap: 0;
+                margin-bottom: 14px;
+            }
+
+            .news-date {
+                width: auto;
             }
         }
 
         @media (prefers-reduced-motion: reduce) {
-            * {
-                transition: none !important;
-                animation: none !important;
-            }
-
-            .fade-in {
-                opacity: 1;
-                transform: none;
+            html {
+                scroll-behavior: auto;
             }
         }
     </style>
 </head>
 
 <body>
-    <div class="scroll-indicator" id="scrollIndicator"></div>
-    <div style="width:1000px;margin: 0px auto; max-width: 95%;">
-        <header id="header" width="400px" style="display:flex;justify-content: space-around;">
-            <a href="#profile-intro">Home</a>
-            <a href="#updates">News</a>
+    <div class="container">
+        <nav>
+            <a href="#about">About</a>
+            <a href="#news">News</a>
             <a href="#research">Research</a>
             <a href="#patents">Patents</a>
             <a href="#service">Service</a>
-        </header>
-        <div id="profile"
-            style="display: flex; align-items: stretch; padding: 60px 30px 40px 30px; border-bottom: 1px solid #eee;">
-            <div id="profile-pic" style="margin-right: 40px; flex-shrink: 0; width: 340px;">
-                <img src="figs/me.jpg"
-                    style="width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.12);" />
-            </div>
-            <div id="profile-intro" style="flex: 1;">
-                <div id="profile-name" style="margin-top: 0;">Abhiroop Ajith</div>
-                <div id="profile-email">aajith at wpi dot edu</div>
+        </nav>
+
+        <div id="about">
+            <div id="about-text">
+                <h1>Abhiroop Ajith</h1>
+                <div id="tagline">Research Intern at Siemens &middot; PhD Student at WPI</div>
+                <div id="contact-links">
+                    <a href="mailto:aajith@wpi.edu">Email</a><span class="sep">/</span>
+                    <a href="cv/Abhiroop_Resume_Feb18.pdf">CV</a><span class="sep">/</span>
+                    <a href="https://scholar.google.com/citations?user=LiDMFt4AAAAJ&hl=en">Google
+                        Scholar</a><span class="sep">/</span>
+                    <a href="https://github.com/AbhiroopAjith">GitHub</a><span class="sep">/</span>
+                    <a href="https://www.linkedin.com/in/abhiroopajith">LinkedIn</a>
+                </div>
                 <p>
                     I am currently a Research Intern at Siemens in Berkeley, California, working on self-supervised
                     video pretraining for robotics. I am also a third-year PhD student in Robotics Engineering at
                     Worcester Polytechnic Institute, advised by
                     <a href="https://cchamzas.com/">Prof. Constantinos Chamzas</a> and part of the
-                    <a href="https://elpislab.org/">ELPIS Lab</a>, where my research focuses on learning world models and
-                    symbolic abstractions for long-horizon robot manipulation.
+                    <a href="https://elpislab.org/">ELPIS Lab</a>, where my research focuses on learning world models
+                    and symbolic abstractions for long-horizon robot manipulation.
                 </p>
                 <p>
-                    Before my PhD, I worked with <a
-                        href="https://scholar.google.com.au/citations?user=AvvaaJcAAAAJ&hl=en">Eugen Solowjow</a>'s
-                    team at Siemens in Berkeley, conducting research on industrial manipulation and
-                    manufacturing.
-                    Our work involved transitioning technologies from TRL Level 3 to TRL Level 7, supported by the ARM
-                    Institute
-                    via the Department of Defense and NIST. I contributed to projects including tactile manipulation for
-                    defect detection
-                    of aircrafts (in collaboration with Boeing, CMU and Gelsight) and textile manipulation (in
-                    collaboration with Levi's and
+                    Before my PhD, I worked with
+                    <a href="https://scholar.google.com.au/citations?user=AvvaaJcAAAAJ&hl=en">Eugen Solowjow</a>'s team
+                    at Siemens in Berkeley, conducting research on industrial manipulation and manufacturing. Our work
+                    involved transitioning technologies from TRL 3 to TRL 7, supported by the ARM Institute via the
+                    Department of Defense and NIST. I contributed to projects including tactile manipulation for defect
+                    detection of aircraft (with Boeing, CMU, and GelSight) and textile manipulation (with Levi's and
                     Bluewater Defense).
                 </p>
-                <div class="profile-links" style="margin-top: 25px;">
-                    <a href="cv/Abhiroop_Resume_Feb18.pdf">📄 CV</a>
-                    <a href="https://scholar.google.com/citations?user=LiDMFt4AAAAJ&hl=en">🎓 Google Scholar</a>
-                    <a href="https://github.com/AbhiroopAjith">💻 Github</a>
-                </div>
-                <div style="text-align: center; margin-top: 12px;">
-                    <span style="font-size: 0.8em; color: var(--text-muted);">CV last updated: Feb 18, 2024</span>
-                </div>
+            </div>
+            <div id="portrait">
+                <img src="figs/me.jpg" alt="Portrait of Abhiroop Ajith" />
             </div>
         </div>
-        <div class="section fade-in" id="updates" style="margin: 0 auto; max-width: 900px;">
-            <h1>News</h1>
-            <div class="news-item">
-                <span class="news-date">September 2026</span>
-                Our paper "STRIPS-WM: Learning Grounded Propositional STRIPS-style World Models from Images" has been
-                accepted at CoRL 2026!
+
+        <section id="news">
+            <h2>News</h2>
+            <div class="news-row">
+                <div class="news-date">Sep 2026</div>
+                <div class="news-text">Our paper <i>STRIPS-WM: Learning Grounded Propositional STRIPS-style World
+                        Models from Images</i> was accepted at CoRL 2026!</div>
             </div>
-            <div class="news-item">
-                <span class="news-date">June 2026</span>
-                Joined Siemens as a Research Intern, working on self-supervised video pretraining for robotics.
+            <div class="news-row">
+                <div class="news-date">Jun 2026</div>
+                <div class="news-text">Joined Siemens as a Research Intern, working on self-supervised video
+                    pretraining for robotics.</div>
             </div>
-            <div class="news-item">
-                <span class="news-date">September 2025</span>
-                The preprint for our paper "Learning Discrete Abstractions for Visual Rearrangement Tasks Using
-                Vision-Guided Graph Coloring" is available.
+            <div class="news-row">
+                <div class="news-date">Sep 2025</div>
+                <div class="news-text">The preprint of our paper <i>Learning Discrete Abstractions for Visual
+                        Rearrangement Tasks Using Vision-Guided Graph Coloring</i> is available.</div>
             </div>
-            <div class="news-item">
-                <span class="news-date">April 2025</span>
-                I have received the SIGBED student travel award for $2000 and the Glenn Yee Travel Award for $450.
+            <div class="news-row">
+                <div class="news-date">Apr 2025</div>
+                <div class="news-text">Received the SIGBED student travel award ($2,000) and the Glenn Yee Travel
+                    Award ($450).</div>
             </div>
-            <div class="news-item">
-                <span class="news-date">March 2025</span>
-                Our Paper "Robotic Automation in Apparel Manufacturing: A Novel Approach to Fabric Handling and Sewing"
-                has been accepted at CASE 2025.
+            <div class="news-row">
+                <div class="news-date">Mar 2025</div>
+                <div class="news-text">Our paper <i>Robotic Automation in Apparel Manufacturing</i> was accepted at
+                    CASE 2025.</div>
             </div>
-            <div class="news-item">
-                <span class="news-date">January 2025</span>
-                Our Paper "Multi-layer Motion Planning with Kinodynamic and
-                Spatio-Temporal Constraints" has been accepted at HSCC 2025.
+            <div class="news-row">
+                <div class="news-date">Jan 2025</div>
+                <div class="news-text">Our paper <i>Multi-layer Motion Planning with Kinodynamic and Spatio-Temporal
+                        Constraints</i> was accepted at HSCC 2025.</div>
             </div>
-            <div class="news-item">
-                <span class="news-date">August 2024</span>
-                Started PhD at Worcester Polytechnic Institute.
+            <div class="news-row">
+                <div class="news-date">Aug 2024</div>
+                <div class="news-text">Started my PhD at Worcester Polytechnic Institute.</div>
             </div>
-            <div style="clear: both;"></div>
-        </div>
-        <div class="divider"></div>
-        <div class="fade-in" style="display:flex;flex-direction: column; margin: 0 auto; max-width: 900px; padding: 40px 30px;"
-            id="research">
-            <h1>Research</h1>
-            <div class="research-item">
-                <a href="https://arxiv.org/abs/2606.06832" style="height: 12em; min-width: 200px;"
-                    class="research-thumb">
-                    <img src="figs/fsq-jepa_2.png"
-                        style="object-fit: contain; width: 100%; height: 100%; display: block; background: white;"
+        </section>
+
+        <section id="research">
+            <h2>Research</h2>
+
+            <div class="pub">
+                <a class="pub-thumb" href="https://arxiv.org/abs/2606.06832">
+                    <img src="figs/fsq-jepa_2.png" class="contain" loading="lazy"
                         alt="STRIPS-WM architecture: student-teacher encoders with FSQ quantization, action-conditioned latent dynamics, and inverse model">
                 </a>
-                <div class="research-content">
-                    <a href="https://arxiv.org/abs/2606.06832" class="research-proj-title"
-                        style="font-size: 1.2rem; font-weight: 600;">
+                <div class="pub-body">
+                    <a class="pub-title" href="https://arxiv.org/abs/2606.06832">
                         STRIPS-WM: Learning Grounded Propositional STRIPS-style World Models from Images
                     </a>
-                    <p style="margin: 10px 0;">
-                        <a href="https://arxiv.org/abs/2606.06832">📄 arXiv</a>
-                    </p>
-                    <p style="margin: 10px 0;">
-                        <i>Conference on Robot Learning (CoRL) 2026</i>
-                    </p>
-                    <p style="margin: 10px 0; line-height: 1.5;">
-                        <span class="author-name">Abhiroop Ajith</span>,
-                        Constantinos Chamzas
-                    </p>
+                    <div class="pub-authors"><span class="me">Abhiroop Ajith</span>, Constantinos Chamzas</div>
+                    <div class="pub-venue">Conference on Robot Learning (CoRL), 2026</div>
+                    <div class="pub-tldr">
+                        Learns propositional STRIPS-style world models grounded in images — binary predicates and
+                        operators with sparse preconditions and effects — enabling classical planning directly from
+                        novel start and goal images.
+                    </div>
+                    <div class="pub-links">
+                        <a href="https://arxiv.org/abs/2606.06832">arXiv</a>
+                    </div>
                 </div>
             </div>
-            <div class="research-item">
-                <a href="" style="height: 12em; min-width: 200px;" class="research-thumb">
-                    <video id="graph-coloring-video" autoplay muted loop width="100%"
-                        style="object-fit: cover; height: 100%; display: block; transform: scale(1.2);">
+
+            <div class="pub">
+                <a class="pub-thumb" href="https://www.arxiv.org/abs/2509.14460">
+                    <video autoplay muted loop playsinline preload="metadata" id="graph-coloring-video">
                         <source src="figs/graph_coloring.mp4" type="video/mp4">
                     </video>
                 </a>
-                <div class="research-content">
-                    <a href="" class="research-proj-title" style="font-size: 1.2rem; font-weight: 600;">
-                        Learning Discrete Abstractions for Visual Rearrangement Tasks Using Vision-Guided Graph Coloring
+                <div class="pub-body">
+                    <a class="pub-title" href="https://www.arxiv.org/abs/2509.14460">
+                        Learning Discrete Abstractions for Visual Rearrangement Tasks Using Vision-Guided Graph
+                        Coloring
                     </a>
-                    <p style="margin: 10px 0;">
-                        <a href="https://www.arxiv.org/abs/2509.14460">📄 arXiv</a>
-                    </p>
-                    <p style="margin: 10px 0;">
-                        <i>Under Review</i>
-                    </p>
-                    <p style="margin: 10px 0; line-height: 1.5;">
-                        <span class="author-name">Abhiroop Ajith</span>,
-                        Constantinos Chamzas
-                    </p>
+                    <div class="pub-authors"><span class="me">Abhiroop Ajith</span>, Constantinos Chamzas</div>
+                    <div class="pub-venue">Under review</div>
+                    <div class="pub-tldr">
+                        Casts state abstraction as vision-guided graph coloring, learning discrete symbolic states for
+                        visual rearrangement tasks.
+                    </div>
+                    <div class="pub-links">
+                        <a href="https://www.arxiv.org/abs/2509.14460">arXiv</a>
+                    </div>
                 </div>
             </div>
-            <div class="research-item">
-                <a href="" style="height: 12em; min-width: 200px;" class="research-thumb">
-                    <video id="teaser" autoplay muted loop width="100%"
-                        style="object-fit: cover; height: 100%; display: block;">
+
+            <div class="pub">
+                <a class="pub-thumb" href="https://arxiv.org/abs/2503.07762">
+                    <video autoplay muted loop playsinline preload="metadata">
                         <source src="figs/sst_stl.mp4" type="video/mp4">
                     </video>
                 </a>
-                <div class="research-content">
-                    <a href="" class="research-proj-title" style="font-size: 1.2rem; font-weight: 600;">
+                <div class="pub-body">
+                    <a class="pub-title" href="https://arxiv.org/abs/2503.07762">
                         Multi-layer Motion Planning with Kinodynamic and Spatio-Temporal Constraints
                     </a>
-                    <p style="margin: 10px 0;">
-                        <a href="https://arxiv.org/abs/2503.07762">📄 arXiv</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                        <a href="https://dl.acm.org/doi/10.1145/3716863.3718041">📖
-                            Paper</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                        <a href="https://github.com/elpis-lab/LG-SST-STL">💻 Code</a>
-                    </p>
-                    <p style="margin: 10px 0;">
-                        <i>ACM Hybrid Systems: Computation and Control (HSCC) 2025</i>
-                    </p>
-                    <p style="margin: 10px 0; line-height: 1.5;">
-                        Jeel Chatrola*,
-                        <span class="author-name">Abhiroop Ajith*</span>,
-                        Kevin Leahy,
-                        Constantinos Chamzas
-                        <br>
-                        <span style="font-size: 0.9em; color: #666;">* Equal contribution</span>
-                    </p>
+                    <div class="pub-authors">Jeel Chatrola*, <span class="me">Abhiroop Ajith</span>*, Kevin Leahy,
+                        Constantinos Chamzas <span class="pub-note">(* equal contribution)</span></div>
+                    <div class="pub-venue">ACM Hybrid Systems: Computation and Control (HSCC), 2025</div>
+                    <div class="pub-tldr">
+                        A multi-layer planner that satisfies signal temporal logic specifications under kinodynamic
+                        constraints.
+                    </div>
+                    <div class="pub-links">
+                        <a href="https://arxiv.org/abs/2503.07762">arXiv</a><span class="sep">/</span>
+                        <a href="https://dl.acm.org/doi/10.1145/3716863.3718041">Paper</a><span class="sep">/</span>
+                        <a href="https://github.com/elpis-lab/LG-SST-STL">Code</a>
+                    </div>
                 </div>
             </div>
-            <div class="research-item">
-                <a href="" style="height: 12em; min-width: 200px;" class="research-thumb">
-                    <video id="teaser" autoplay muted loop width="100%"
-                        style="object-fit: cover; height: 100%; display: block;">
+
+            <div class="pub">
+                <a class="pub-thumb" href="https://arxiv.org/abs/2503.00249">
+                    <video autoplay muted loop playsinline preload="metadata">
                         <source src="figs/sewing.mp4" type="video/mp4">
                     </video>
                 </a>
-                <div class="research-content">
-                    <a href="" class="research-proj-title" style="font-size: 1.2rem; font-weight: 600;">
+                <div class="pub-body">
+                    <a class="pub-title" href="https://arxiv.org/abs/2503.00249">
                         Robotic Automation in Apparel Manufacturing: A Novel Approach to Fabric Handling and Sewing
                     </a>
-                    <p style="margin: 10px 0;">
-                        <a href="https://arxiv.org/abs/2503.00249">📄 arXiv</a>
-                    </p>
-                    <p style="margin: 10px 0;">
-                        <i>2025 IEEE International Conference on Automation Science and Engineering (CASE)</i>
-                    </p>
-                    <p style="margin: 10px 0; line-height: 1.5;">
-                        <span class="author-name">Abhiroop Ajith</span>*,
-                        Gokul Narayanan*,
-                        Jonathan Zornow,
-                        Carlos Calle,
-                        Auralis Herrero Lugo,
-                        Jose Luis Susa Rincon,
-                        Chengtao Wen,
-                        Eugen Solowjow
-                        <br>
-                        <span style="font-size: 0.9em; color: #666;">* Equal contribution</span>
-                        <br>
-                        <span style="font-size: 0.9em; color: #666;"><strong>Collaborators:</strong> Levi's, BlueWater
-                            Defense, Sewbo</span>
-                    </p>
+                    <div class="pub-authors"><span class="me">Abhiroop Ajith</span>*, Gokul Narayanan*, Jonathan
+                        Zornow, Carlos Calle, Auralis Herrero Lugo, Jose Luis Susa Rincon, Chengtao Wen, Eugen
+                        Solowjow <span class="pub-note">(* equal contribution)</span></div>
+                    <div class="pub-venue">IEEE International Conference on Automation Science and Engineering (CASE),
+                        2025</div>
+                    <div class="pub-tldr">
+                        A robotic system for fabric handling and automated sewing, developed in collaboration with
+                        Levi's, Bluewater Defense, and Sewbo.
+                    </div>
+                    <div class="pub-links">
+                        <a href="https://arxiv.org/abs/2503.00249">arXiv</a>
+                    </div>
                 </div>
             </div>
-            <div class="research-item">
-                <a href="" style="height: 12em; min-width: 200px;" class="research-thumb">
-                    <video id="teaser" autoplay muted loop width="100%"
-                        style="object-fit: cover; height: 100%; display: block;">
+
+            <div class="pub">
+                <a class="pub-thumb" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10341590">
+                    <video autoplay muted loop playsinline preload="metadata">
                         <source src="figs/tactile.mp4" type="video/mp4">
                     </video>
                 </a>
-                <div class="research-content">
-                    <a href="" class="research-proj-title" style="font-size: 1.2rem; font-weight: 600;">
-                        Robotic defect inspection with visual and tactile perception for large-scale components
+                <div class="pub-body">
+                    <a class="pub-title" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10341590">
+                        Robotic Defect Inspection with Visual and Tactile Perception for Large-Scale Components
                     </a>
-                    <p style="margin: 10px 0;">
-                        <a href="https://arxiv.org/pdf/2309.04590">📄 arXiv</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                        <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10341590">📖
-                            Paper</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                        <a href="https://zenodo.org/records/8327713">📊 Dataset</a>
-                    </p>
-                    <p style="margin: 10px 0;">
-                        <i>2023 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</i>
-                    </p>
-                    <p style="margin: 10px 0; line-height: 1.5;">
-                        Arpit Agarwal,
-                        <span class="author-name">Abhiroop Ajith</span>,
-                        Chengtao Wen,
-                        Veniamin Stryzheus,
-                        Brian Miller,
-                        Matthew Chen,
-                        Micah K Johnson,
-                        Jose Luis Susa Rincon,
-                        Justinian Rosca,
-                        Wenzhen Yuan
-                        <br>
-                        <span style="font-size: 0.9em; color: #666;"><strong>Collaborators:</strong> Carnegie Mellon
-                            University (CMU), Boeing, Gelsight</span>
-                    </p>
+                    <div class="pub-authors">Arpit Agarwal, <span class="me">Abhiroop Ajith</span>, Chengtao Wen,
+                        Veniamin Stryzheus, Brian Miller, Matthew Chen, Micah K. Johnson, Jose Luis Susa Rincon,
+                        Justinian Rosca, Wenzhen Yuan</div>
+                    <div class="pub-venue">IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS),
+                        2023</div>
+                    <div class="pub-tldr">
+                        Combines visual and tactile perception for robotic defect inspection of large aircraft
+                        components, with Boeing, CMU, and GelSight.
+                    </div>
+                    <div class="pub-links">
+                        <a href="https://arxiv.org/pdf/2309.04590">arXiv</a><span class="sep">/</span>
+                        <a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10341590">Paper</a><span
+                            class="sep">/</span>
+                        <a href="https://zenodo.org/records/8327713">Dataset</a>
+                    </div>
                 </div>
             </div>
-            <div style="clear: both;"></div>
-        </div>
-        <div class="divider"></div>
-        <div class="section fade-in" id="patents" style="margin: 0 auto; max-width: 900px; padding: 40px 30px;">
-            <h1>Patents</h1>
-            <div
-                style="display: flex; background: white; padding: 25px; border-radius: 15px; box-shadow: var(--shadow); border-left: 4px solid var(--primary-color);">
-                <div style="margin-right: 25px; min-width: 300px;">
-                    <img src="figs/patent_viz.png"
-                        style="width: 300px; height: auto; border-radius: 10px; box-shadow: var(--shadow); border: 1px solid #ddd; background: white; padding: 10px;"
-                        alt="Patent diagram showing robotic visual tactile surface inspection system">
-                </div>
-                <div style="flex: 1;">
-                    <h3 style="color: var(--primary-color); margin-bottom: 15px; font-size: 1.1rem; font-weight: 600;">
-                        Robotic visual tactile surface inspection system
-                    </h3>
-                    <p style="margin: 10px 0; color: #666; font-size: 0.95rem;">
-                        <strong>Patent No:</strong> WO2024181994A1 &nbsp;&bull;&nbsp;
-                        <strong>Published:</strong> September 6, 2024 &nbsp;&bull;&nbsp;
-                        <strong>Filed:</strong> August 29, 2023
-                    </p>
-                    <p style="margin: 10px 0; color: #666; font-size: 0.95rem;">
-                        <strong>Assignee:</strong> Siemens Corporation &nbsp;&bull;&nbsp;
-                        <strong>Authority:</strong> WIPO (PCT)
-                    </p>
-                    <p style="margin: 15px 0; line-height: 1.5;">
-                        <strong>Inventors:</strong> Chengtao Wen, Justinian Rosca, Eugen Solowjow, Gokul Narayanan
-                        Sathya Narayanan, Jose Luis Susa Rincon, <span class="author-name">Abhiroop Ajith</span>
-                    </p>
-                    <p style="margin: 15px 0;">
-                        <a href="https://patents.google.com/patent/WO2024181994A1" target="_blank">📄 View Patent</a>
-                    </p>
-                </div>
-            </div>
-            <div
-                style="display: flex; background: white; padding: 25px; border-radius: 15px; box-shadow: var(--shadow); border-left: 4px solid var(--primary-color); margin-top: 25px;">
-                <div style="margin-right: 25px; min-width: 300px;">
-                    <img src="figs/US_2025388339_A1.png"
-                        style="width: 300px; height: auto; border-radius: 10px; box-shadow: var(--shadow); border: 1px solid #ddd; background: white; padding: 10px;"
-                        alt="Patent diagram showing multimodal inspection method">
-                </div>
-                <div style="flex: 1;">
-                    <h3 style="color: var(--primary-color); margin-bottom: 15px; font-size: 1.1rem; font-weight: 600;">
-                        Multimodal inspection of large-scale surfaces using vehicle-borne sensors (Method)
-                    </h3>
-                    <p style="margin: 10px 0; color: #666; font-size: 0.95rem;">
-                        <strong>Patent No:</strong> US20250388339A1 &nbsp;&bull;&nbsp;
-                        <strong>Published:</strong> December 25, 2025 &nbsp;&bull;&nbsp;
-                        <strong>Filed:</strong> June 25, 2024
-                    </p>
-                    <p style="margin: 10px 0; color: #666; font-size: 0.95rem;">
-                        <strong>Assignee:</strong> Siemens Corporation, Boeing Co. &nbsp;&bull;&nbsp;
-                        <strong>Authority:</strong> United States
-                    </p>
-                    <p style="margin: 15px 0; line-height: 1.5;">
-                        <strong>Inventors:</strong> Veniamin V. Stryzheus, Brian T. Miller, Matthew J. Chen, Micah K.
-                        Johnson, <span class="author-name">Abhiroop Ajith</span>, Chengtao Wen, Jose Luis Susa Rincon,
-                        Justinian Rosca
-                    </p>
-                    <p style="margin: 10px 0; color: #666; font-size: 0.9rem; font-style: italic;">
-                        A method of inspection of a surface of an aerodynamic structure using image sensors and tactile
-                        sensors to identify and characterize defects with corresponding location and dimensioning
-                        information.
-                    </p>
-                    <p style="margin: 15px 0;">
-                        <a href="https://patents.google.com/patent/US20250388339A1" target="_blank">📄 View Patent</a>
-                    </p>
-                </div>
-            </div>
-            <div
-                style="display: flex; background: white; padding: 25px; border-radius: 15px; box-shadow: var(--shadow); border-left: 4px solid var(--primary-color); margin-top: 25px;">
-                <div style="margin-right: 25px; min-width: 300px;">
-                    <img src="figs/US_2025388339_A1_2.png"
-                        style="width: 300px; height: auto; border-radius: 10px; box-shadow: var(--shadow); border: 1px solid #ddd; background: white; padding: 10px;"
-                        alt="Patent diagram showing multimodal inspection system">
-                </div>
-                <div style="flex: 1;">
-                    <h3 style="color: var(--primary-color); margin-bottom: 15px; font-size: 1.1rem; font-weight: 600;">
-                        Multimodal inspection of large-scale surfaces using vehicle-borne sensors (System)
-                    </h3>
-                    <p style="margin: 10px 0; color: #666; font-size: 0.95rem;">
-                        <strong>Patent No:</strong> US20250388337A1 &nbsp;&bull;&nbsp;
-                        <strong>Published:</strong> December 25, 2025 &nbsp;&bull;&nbsp;
-                        <strong>Filed:</strong> June 25, 2024
-                    </p>
-                    <p style="margin: 10px 0; color: #666; font-size: 0.95rem;">
-                        <strong>Assignee:</strong> Siemens Corporation, Boeing Co., Carnegie Mellon University
-                        &nbsp;&bull;&nbsp;
-                        <strong>Authority:</strong> United States
-                    </p>
-                    <p style="margin: 15px 0; line-height: 1.5;">
-                        <strong>Inventors:</strong> Veniamin V. Stryzheus, Veniamin Tereshchuk, Arpit Agarwal, Wenzhen
-                        Yuan, Micah K. Johnson, <span class="author-name">Abhiroop Ajith</span>, Chengtao Wen, Justinian
-                        Rosca
-                    </p>
-                    <p style="margin: 10px 0; color: #666; font-size: 0.9rem; font-style: italic;">
-                        A system for inspection of aerodynamic surfaces using vehicle-mounted image and tactile sensors
-                        on a track to identify and dimension predicted defects.
-                    </p>
-                    <p style="margin: 15px 0;">
-                        <a href="https://patents.google.com/patent/US20250388337A1" target="_blank">📄 View Patent</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="divider"></div>
-        <div class="section fade-in" id="service" style="margin: 0 auto; max-width: 900px;">
-            <h1>Service</h1>
-            <div class="service-item">
-                🎓 Teaching assistant &mdash; <b>RBE 577 Machine Learning for Robotics</b>
-            </div>
-            <div class="service-item">
-                📝 Reviewer &mdash; <b>Robotics and Automation Letters (RA-L)</b>, <b>ICRA</b>, <b>IROS</b>
-            </div>
-            <div style="clear: both;"></div>
-        </div>
+        </section>
 
-        <!-- Footer -->
-        <footer class="site-footer">
-            <p style="margin-bottom: 4px;">Abhiroop Ajith</p>
-            <p style="font-size: 0.8rem;">PhD Student &middot; Robotics Engineering &middot; WPI</p>
+        <section id="patents">
+            <h2>Patents</h2>
+
+            <div class="patent">
+                <div class="patent-title">
+                    <a href="https://patents.google.com/patent/WO2024181994A1">Robotic visual tactile surface
+                        inspection system</a>
+                </div>
+                <div class="patent-meta">WO2024181994A1 &middot; Siemens Corporation &middot; WIPO (PCT) &middot;
+                    Published Sep 2024</div>
+                <div class="patent-inventors">Chengtao Wen, Justinian Rosca, Eugen Solowjow, Gokul Narayanan Sathya
+                    Narayanan, Jose Luis Susa Rincon, <span class="me">Abhiroop Ajith</span></div>
+            </div>
+
+            <div class="patent">
+                <div class="patent-title">
+                    <a href="https://patents.google.com/patent/US20250388339A1">Multimodal inspection of large-scale
+                        surfaces using vehicle-borne sensors (Method)</a>
+                </div>
+                <div class="patent-meta">US20250388339A1 &middot; Siemens Corporation, Boeing Co. &middot; United
+                    States &middot; Published Dec 2025</div>
+                <div class="patent-inventors">Veniamin V. Stryzheus, Brian T. Miller, Matthew J. Chen, Micah K.
+                    Johnson, <span class="me">Abhiroop Ajith</span>, Chengtao Wen, Jose Luis Susa Rincon, Justinian
+                    Rosca</div>
+            </div>
+
+            <div class="patent">
+                <div class="patent-title">
+                    <a href="https://patents.google.com/patent/US20250388337A1">Multimodal inspection of large-scale
+                        surfaces using vehicle-borne sensors (System)</a>
+                </div>
+                <div class="patent-meta">US20250388337A1 &middot; Siemens Corporation, Boeing Co., Carnegie Mellon
+                    University &middot; United States &middot; Published Dec 2025</div>
+                <div class="patent-inventors">Veniamin V. Stryzheus, Veniamin Tereshchuk, Arpit Agarwal, Wenzhen Yuan,
+                    Micah K. Johnson, <span class="me">Abhiroop Ajith</span>, Chengtao Wen, Justinian Rosca</div>
+            </div>
+        </section>
+
+        <section id="service">
+            <h2>Service</h2>
+            <ul>
+                <li>Teaching Assistant — RBE 577: Machine Learning for Robotics, WPI</li>
+                <li>Reviewer — IEEE Robotics and Automation Letters (RA-L), ICRA, IROS</li>
+            </ul>
+        </section>
+
+        <footer>
+            Abhiroop Ajith &middot; Robotics Engineering, Worcester Polytechnic Institute
         </footer>
     </div>
 
     <script>
-        window.addEventListener('scroll', () => {
-            const scrollTop = document.documentElement.scrollTop;
-            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrollPercent = (scrollTop / scrollHeight) * 100;
-            document.getElementById('scrollIndicator').style.width = scrollPercent + '%';
-        });
-
-        document.querySelectorAll('#header a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                const targetElement = document.getElementById(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
         document.addEventListener('DOMContentLoaded', function () {
             const graphVideo = document.getElementById('graph-coloring-video');
             if (graphVideo) {
@@ -766,18 +643,7 @@
                 });
             }
         });
-
-        const fadeObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-        document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
     </script>
-
 </body>
 
 </html>
