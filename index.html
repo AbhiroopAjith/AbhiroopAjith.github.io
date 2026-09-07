@@ -478,8 +478,8 @@
 
             <div class="pub">
                 <a class="pub-thumb" href="https://www.arxiv.org/abs/2509.14460">
-                    <video autoplay muted loop playsinline preload="metadata" id="graph-coloring-video">
-                        <source src="figs/graph_coloring.mp4" type="video/mp4">
+                    <video autoplay muted loop playsinline preload="metadata">
+                        <source src="figs/visual_planning.mp4" type="video/mp4">
                     </video>
                 </a>
                 <div class="pub-body">
@@ -629,20 +629,6 @@
         </footer>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const graphVideo = document.getElementById('graph-coloring-video');
-            if (graphVideo) {
-                graphVideo.addEventListener('loadedmetadata', function () {
-                    this.currentTime = 2;
-                });
-                graphVideo.addEventListener('ended', function () {
-                    this.currentTime = 2;
-                    this.play();
-                });
-            }
-        });
-    </script>
 </body>
 
 </html>
