@@ -238,14 +238,27 @@
         }
 
         @media (max-width: 768px) {
-            #profile {
+            #profile>div {
                 flex-direction: column;
                 text-align: center;
+                gap: 25px;
             }
 
             #profile-pic {
-                margin-right: 0 !important;
-                margin-bottom: 20px;
+                margin: 0 auto !important;
+            }
+
+            #profile-pic img {
+                width: 180px !important;
+                height: 230px !important;
+            }
+
+            #profile-name {
+                font-size: 2rem !important;
+            }
+
+            .profile-links {
+                justify-content: center;
             }
 
             .research-item {
@@ -377,16 +390,17 @@
                 <div id="profile-name" style="margin-top: 0;">Abhiroop Ajith</div>
                 <div id="profile-email">aajith at wpi dot edu</div>
                 <p>
-                    I am a second-year PhD student in Robotics Engineering at Worcester Polytechnic Institute, advised
-                    by
+                    I am currently a Research Intern at Siemens in Berkeley, California, working on self-supervised
+                    video pretraining for robotics. I am also a third-year PhD student in Robotics Engineering at
+                    Worcester Polytechnic Institute, advised by
                     <a href="https://cchamzas.com/">Prof. Constantinos Chamzas</a> and part of the
-                    <a href="https://elpislab.org/">ELPIS Lab</a>. My research focuses on learning representations for
-                    Robot Task and Motion Planning.
+                    <a href="https://elpislab.org/">ELPIS Lab</a>, where my research focuses on learning world models and
+                    symbolic abstractions for long-horizon robot manipulation.
                 </p>
                 <p>
-                    In another lifetime, I worked with <a
+                    Before my PhD, I worked with <a
                         href="https://scholar.google.com.au/citations?user=AvvaaJcAAAAJ&hl=en">Eugen Solowjow</a>'s
-                    team at Siemens in Berkeley, California, conducting research on industrial manipulation and
+                    team at Siemens in Berkeley, conducting research on industrial manipulation and
                     manufacturing.
                     Our work involved transitioning technologies from TRL Level 3 to TRL Level 7, supported by the ARM
                     Institute
@@ -408,6 +422,15 @@
         </div>
         <div class="section fade-in" id="updates" style="margin: 0 auto; max-width: 900px;">
             <h1>News</h1>
+            <div class="news-item">
+                <span class="news-date">September 2026</span>
+                Our paper "STRIPS-WM: Learning Grounded Propositional STRIPS-style World Models from Images" has been
+                accepted at CoRL 2026!
+            </div>
+            <div class="news-item">
+                <span class="news-date">June 2026</span>
+                Joined Siemens as a Research Intern, working on self-supervised video pretraining for robotics.
+            </div>
             <div class="news-item">
                 <span class="news-date">September 2025</span>
                 The preprint for our paper "Learning Discrete Abstractions for Visual Rearrangement Tasks Using
@@ -437,6 +460,30 @@
         <div class="fade-in" style="display:flex;flex-direction: column; margin: 0 auto; max-width: 900px; padding: 40px 30px;"
             id="research">
             <h1>Research</h1>
+            <div class="research-item">
+                <a href="https://arxiv.org/abs/2606.06832" style="height: 12em; min-width: 200px;"
+                    class="research-thumb">
+                    <img src="figs/fsq-jepa_2.png"
+                        style="object-fit: contain; width: 100%; height: 100%; display: block; background: white;"
+                        alt="STRIPS-WM architecture: student-teacher encoders with FSQ quantization, action-conditioned latent dynamics, and inverse model">
+                </a>
+                <div class="research-content">
+                    <a href="https://arxiv.org/abs/2606.06832" class="research-proj-title"
+                        style="font-size: 1.2rem; font-weight: 600;">
+                        STRIPS-WM: Learning Grounded Propositional STRIPS-style World Models from Images
+                    </a>
+                    <p style="margin: 10px 0;">
+                        <a href="https://arxiv.org/abs/2606.06832">📄 arXiv</a>
+                    </p>
+                    <p style="margin: 10px 0;">
+                        <i>Conference on Robot Learning (CoRL) 2026</i>
+                    </p>
+                    <p style="margin: 10px 0; line-height: 1.5;">
+                        <span class="author-name">Abhiroop Ajith</span>,
+                        Constantinos Chamzas
+                    </p>
+                </div>
+            </div>
             <div class="research-item">
                 <a href="" style="height: 12em; min-width: 200px;" class="research-thumb">
                     <video id="graph-coloring-video" autoplay muted loop width="100%"
